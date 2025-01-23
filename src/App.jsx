@@ -15,25 +15,24 @@ function App() {
   return(
     <div>
 
-      <nav>
+      {/* <nav>
         <Link to="/user/7" state={{ name: "Priscilla" }}>User 7</Link>
         <br />
         <Link to="/">Home </Link>
         <br />
-        {/* <Link to="profile">Profile </Link> */}
+        <Link to="profile">Profile </Link> 
         <br />
         <Link to="/dashboard">Dashboard </Link>
         <br />
         <Link to="/about">About</Link>
         <br />
         <Link to="/?code=blackfriday">share invite link</Link>
-      </nav>
+      </nav> */}
 
     {/* <h1>{"your invite link is  http://localhost:5173/?="refCode} </h1> */}
 
 
       <Routes>
-
       <Route path="/" element={<Home />} />
 
 
@@ -52,16 +51,3 @@ function App() {
 
 export default App
 
-
-
-// {movies?.length > 0 ? (
-//   <div className="container">
-//     {movies.map((movie, index) => (
-//       <MovieCard key={index} movie={movie} />
-//     ))}
-//   </div>
-// ) : (
-//   <div className="empty">
-//     <h2>No movies found</h2>
-//   </div>
-// )}

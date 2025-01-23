@@ -3,22 +3,21 @@ import './Home.css'
 import SearchIcon from "/search.png";
 import MovieCard from './MovieCard';
 
-const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=d9b2e06&s=batman";
+const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=d9b2e06";
 
 
 function Home(){
-  const [searchTerm, setSearchTerm] = useState("Batman");
+  const [searchTerm, setSearchTerm] = useState();
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("Spider Man");
   }, []);
 
   const searchMovies = async (searchTerm) => {
-    console.log("Searching for", searchTerm);
-    const response = await fetch(`${API_URL}&t=${searchTerm}`);
+    const response = await fetch(`${API_URL}&s=${searchTerm}`);
     const data = await response.json();
-    console.log(data)
+  
 
 
     setMovies(data.Search);
@@ -28,7 +27,7 @@ function Home(){
   return (
 
   <div className='app'>
-    <h1>Netflix</h1>
+    <h1>Netflix Clone</h1>
 
     <div className='search'>
       <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type='text' placeholder='Search for movies' />
